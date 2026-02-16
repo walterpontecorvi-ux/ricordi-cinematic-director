@@ -18,32 +18,44 @@
 Ensure you have `ffmpeg` installed on your system:
 ```bash
 sudo apt update && sudo apt install ffmpeg
-
+'''
 Install the Python dependencies:
 '''bash
 pip install -r requirements.txt
+'''
+##🚀 Usage
 
-###🚀 Usage
-
-Basic Example
+###Basic Example
 
 *Generate daily videos with automatic titles and geocoding:
 '''bash
 python ricordi_ultimate_pro.py /path/to/photos -ad /path/to/music -od ./Output_Videos
+'''
 
-Feature Film Mode (No Split)
+###Feature Film Mode (No Split)
 *Create one single video of the entire trip:
 '''bash
 python ricordi_ultimate_pro.py /path/to/photos -ad /path/to/music --no-split -t "My Great Adventure"
+'''
+### Parameters
+Flag                            Description
+--no-split                      Disables daily video splitting; creates one single file.
+--workers X	                    Set the number of parallel processes (use 1 or 2 if you encounter RAM/OOM issues).
+--geo-threshold X	            Distance in meters for GPS location caching (default: 300m).
+-r, --resolution RESOLUTION     Resolution (e.g., 1080p, 4k, 720p).
+-z, --zoom ZOOM                 Ken Burns zoom intensity (e.g., 1.2 for 20% zoom).
+--limit X	                    Process only the first X photos (great for quick testing).
+-h, --help                      show this help message and exit
+-ad, --audio-dir  AUDIO_DIR     Music folder
+-c, --config CONFIG             Project JSON
+-od, --output-dir OUTPUT_DIR    Output folder
+-f, --fps FPS
+-t, --title TITLE               General title
+--sync-audio
+--limit LIMIT
+-v, --verbose
+--debug
 
-##Advanced Parameters
-Flag                Description
---no-split          Disables daily video splitting; creates one single file.
---workers X	        Set the number of parallel processes (use 1 or 2 if you encounter RAM/OOM issues).
---geo-threshold X	Distance in meters for GPS location caching (default: 300m).
--r	                Resolution (e.g., 1080p, 4k, 720p).
--z	                Ken Burns zoom intensity (e.g., 1.2 for 20% zoom).
---limit X	        Process only the first X photos (great for quick testing).
 
 ##📁 Project Configuration (Optional)
 
@@ -57,5 +69,6 @@ You can create a project.json file to customize titles and music for specific da
     }
   }
 }
+
 ##📄 License
 Distributed under the GNU GPL v3 License. Built with passion for preserving memories in cinematic style.
