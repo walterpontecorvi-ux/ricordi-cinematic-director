@@ -1,0 +1,6 @@
+moviepy
+opencv-python
+Pillow
+exifread
+geopy
+numpy
