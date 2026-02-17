@@ -18,7 +18,8 @@
 Ensure you have `ffmpeg` installed on your system:
 ```bash
 sudo apt update && sudo apt install ffmpeg
-'''
+'''bash
+
 Install the Python dependencies:
 '''bash
 pip install -r requirements.txt
